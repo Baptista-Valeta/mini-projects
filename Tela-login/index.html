@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+   <link rel="shortcut icon" href="Favicon/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+
+          <!-- Slide ao lado -->
+      <div class="content">
+         <div class="apresentation">
+            <h2>Welcome to the Student Management System</h2>
+            <p>Simplifica a sua gestão escolar e aumente a sua produtividade com o nosso Sistema de Gestão Escolar</p>
+
+            <div class="slide">
+               <img src="img/escola.jpeg" alt="Faça a gestão de sua turma">
+            </div>
+            <div class="slide">
+               <img src="img/escola2.jpeg" alt="Controle e gerencie sua escola com o nosso sistema">
+            </div>
+            <div class="slide">
+               <img src="img/escola3.jpeg" alt="Divulgação de temas dinámicos através do nosso sistema">
+            </div>
+            <div class="slide">
+               <img src="img/escola4.jpeg" alt="Lance as medias e notas dos alunos">
+            </div>
+            <div class="slide">
+               <img src="img/escola5.jpeg" alt="Destaque os mais destacados">
+            </div>
+            <!-- Os pontos de destaque -->
+            <div class="points">
+               <span class="point-circular" onclick="clickPoint(1)"></span>
+               <span class="point-circular" onclick="clickPoint(2)"></span>
+               <span class="point-circular" onclick="clickPoint(3)"></span>
+               <span class="point-circular" onclick="clickPoint(4)"></span>
+               <span class="point-circular" onclick="clickPoint(5)"></span>
+            </div>
+         </div>         
+      </div>
+
+
+      <!-- Formulario para login -->
+      <form class="login" action="#"> 
+         <h2>Login</h2>
+         <div class="input-box">
+            <input type="text" id="username" required>
+            <label for="username">Username</label>
+            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+         </div>
+         <div class="input-box">
+            <input type="password" name="password" id="password" required>
+            <label for="password">Password</label>
+            <span class="icon-look"><ion-icon name="eye-outline"></ion-icon></span>
+            <span class="icon-noLook"><ion-icon name="eye-off-outline"></ion-icon></span>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+         </div>
+
+         <button type="submit" id="btn-login">Login</button>
+
+         <p>Or continue with</p>
+         <div class="login-other">
+            <a href="#">Google</a>
+            <a href="#">Apple</a>
+            <a href="#">Facebook</a>
+         </div>
+
+         <!-- Formulario para registrar -->
+         <p>Not a member? <strong onclick="register()">Register now</strong></p>
+      </form> 
+
+      <!-- Formulario para Registrar -->
+      <form class="register active" action="#"> 
+         <h2>Register</h2>
+         <div class="input-box">
+            <input type="text" id="username2" required>
+            <label for="username">Username</label>
+            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+         </div>
+
+         <div class="input-box">
+            <input type="email" name="email" id="email" required>
+            <label for="email">Email</label>
+            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+         </div>
+
+         <div class="input-box">
+            <input type="tel" id="tel" required>
+            <label for="tel">Number</label>
+            <span class="icon"><ion-icon name="call-outline"></ion-icon></ion-icon></span>
+         </div>
+
+         <div class="input-box">
+            <input type="password" name="senha" id="password" required>
+            <label for="password">Password</label>
+            <span class="icon-look" id="icon-look2"><ion-icon name="eye-outline"></ion-icon></span>
+            <span class="icon-noLook" id="icon-noLook2"><ion-icon name="eye-off-outline"></ion-icon></span>            
+         </div>
+
+         <button type="submit" id="btn-register">Register</button>
+         <p>Already have account? <strong onclick="login()">Login</strong></p>
+      </form> 
+
+  
+   </div>
+
+<script src="script.js"></script>
+
+<!-- Para a insercao dos icones -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
