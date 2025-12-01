@@ -1,0 +1,111 @@
+* {
+    font-family: "Digital-7", monospace; 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 1.2rem;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transition: background 1s ease-out;
+}
+
+h1 {
+    margin: 50px;
+    box-shadow: 3px 3px 130px #312f2f;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#termometro {
+    background-color: rgba(255, 255, 255, 0.582);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    width: 350px;
+    height: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.containerText {
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    transition: all .7s ease;
+
+}
+
+.containerBarra {
+    width: 60px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    text-align: left;
+    bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#barra {
+    background-color: transparent;   
+    transition: all .8s ease-in-out;
+    height: 0px;
+}
+
+#barra.frio {
+    height: 10px;
+    background-color: #4da6ff;
+
+}
+
+#barra.normal {
+    height: 145px;
+    background-color: #5cd65c;
+}
+
+#barra.quente {
+    height: 300px;
+    background-color: #ff5050;
+}
+
+button {
+    margin: 0 13px;
+    width: 70px;
+    padding: 10px;
+    border: none;
+    user-select: none;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+button:hover {
+    opacity: .8;
+}
+
+#frio {
+    background-color: #4da6ff;
+}
+
+#normal {
+    background-color: #5cd65c;    
+}
+
+#quente {
+    background-color: #ff5050 ;
+}
+
+footer {
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    bottom: 100px;
+}

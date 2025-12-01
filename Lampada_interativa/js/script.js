@@ -1,33 +1,37 @@
 const img = document.querySelector("#lampada");
+const texto = document.getElementsByTagName("span")[0];
+let estado = "activa";
 
-const lampada = (e) => {
-    // Quando clicar no botão
+const lampadaOnClick = (e) => {
     if (e.type === 'click') {
-        // Alternar o texto do botão
-        onLampada();
+        if (estado === 'activa') onLampada();
     }
-
 }
 
 const lampadaOnHover = (e) => {
-    if (e.type === 'mouseenter') {
-        onLampada();
+    if (e.type === 'mouseenter' || e.type === 'mouseout') {
+        if (estado === 'activa') onLampada();
     }
 }
 
 const onLampada = () => {
-    const texto = document.getElementsByTagName("span")[0];
-        
     if (texto.textContent === "Ligar") {
         texto.innerHTML = `Desligar`;
-        img.src = "../imgs/ligada.jpg"
+        img.src = "./imgs/ligada.jpg"
     }else {
         texto.innerHTML = `Ligar`;
-        img.src = "../imgs/desligada.jpg"
-
+        img.src = "./imgs/desligada.jpg"
     }
 }
 
-document.getElementById("ligar").addEventListener('click', lampada);
-img.addEventListener('mouseenter', onLampada);
-img.addEventListener('mouseout', onLampada);
+const statusLamp = () => {
+    estado = "quebrada";
+    texto.textContent = "Quebrada";
+    img.src = "./imgs/quebrada.jpg";
+}
+
+
+document.getElementById("ligar").addEventListener('click', lampadaOnClick);
+img.addEventListener('dblclick', statusLamp);
+img.addEventListener('mouseenter', lampadaOnHover);
+img.addEventListener('mouseout', lampadaOnHover);
