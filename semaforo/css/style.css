@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 100vh;
+}
+
+.container {
+    height: 500px;
+    width: 600px;
+    position: relative;
+}
+
+.colorsButton {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+}
+
+.semaforo {
+    text-align: center;
+    margin: 20px;
+}
+
+.colorsButton * {
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+}
+
+#red {
+    background-color: red;
+    color: white;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: lightgreen;
+}
