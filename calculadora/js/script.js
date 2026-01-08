@@ -1,27 +1,44 @@
-const mostrar = document.querySelector('.mostrar');
-const limparMostrar = document.querySelector('#limparMostrar');
-const limparCalculo = document.querySelector('#limparCalculo');
-const backspace = document.querySelector('#apagar')
-const dividir = document.querySelector('#dividir')
-const multiplicar = document.querySelector('#multiplicar')
-const adicionar = document.querySelector('#adicionar')
-const subtrair = document.querySelector('#subtrair')
-const decimal = document.querySelector('#decimal')
-const igualdade = document.querySelector('#igual')
+'use strict'
 
-const tecla0 = document.querySelector('#tecla0')
-const tecla1 = document.querySelector('#tecla1')
-const tecla2 = document.querySelector('#tecla2')
-const tecla3 = document.querySelector('#tecla3')
-const tecla4 = document.querySelector('#tecla4')
-const tecla5 = document.querySelector('#tecla5')
-const tecla6 = document.querySelector('#tecla6')
-const tecla7 = document.querySelector('#tecla7')
-const tecla8 = document.querySelector('#tecla8')
-const tecla9 = document.querySelector('#tecla9')
+const display = document.querySelector("#display");
+const numeros = document.querySelectorAll('[id*=tecla]'); // Selecione todos os elementos que contenham parte de seu id como tecla
+const operadores = document.querySelectorAll('[id*=operador]');
+const operDisplay = document.querySelector(".oper");
 
-const atualizarTela = () => {
-    mostrar.textContent += "7"
+let novoNumero = true;
+let storageOperador;
+let storageNumeros;
+
+const atualizarDisplay = (texto) => {
+    if(novoNumero) {
+        display.textContent = texto;
+        novoNumero = false;
+    }else
+        display.textContent += texto;
 }
 
-tecla7.addEventListener("click", atualizarTela)
+const inserirNumero = (event) => atualizarDisplay(event.target.textContent);
+
+numeros.forEach (numero => 
+    numero.addEventListener('click', inserirNumero) // Para todos os números adiciona um envento de click
+)
+
+const atualizarOperador = (o) => {
+    operDisplay.textContent = o;
+}
+
+const selecionarOperador = (event) => {
+    if (!novoNumero) {        
+        atualizarOperador(event.target.textContent);
+        novoNumero = true
+        storageOperador = event.target.textContent; 
+        storageNumeros = display.textContent
+        console.log(storageOperador, storageNumeros)
+    }else {
+        
+    }
+}
+
+operadores.forEach (operador => 
+    operador.addEventListener('click', selecionarOperador) // Para todos os números adiciona um envento de click
+)

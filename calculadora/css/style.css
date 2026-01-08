@@ -30,6 +30,7 @@ header {
     user-select: none;
     border-radius: 25px;
     background-color: orange;
+    position: relative;
 }
 
 button {
@@ -40,7 +41,7 @@ button {
     color: white;
     font-weight: 600;
     background-color: #0f0f0f;
-    border-radius: 7px;
+    border-radius: 50pc;
     cursor: pointer;
 }
 
@@ -57,15 +58,22 @@ button:hover {
 .mostrar {
     background-color: #0f0f0f;
     width: 330px;
-    height: 80px;
+    height: 90px;
     margin: 10px auto;
     padding: 20px 10px 0 0;
     border-radius: 5px;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: flex-end;
     overflow-y: hidden;
     scrollbar-width: none;
+}
+
+.oper {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 30px;
+    top: 40px;
 }
 
 footer {
